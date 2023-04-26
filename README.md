@@ -8,21 +8,30 @@ Designer plusieurs projet en MVC
 |---|---|---|
 | get_wf3_blog.php | index.html.php | data.php |
 
-# Files flow
+# Flow
+
+### General 
 
 ```mermaid
 graph LR
-A[index.php] -- include --> C[Model]
-A[index.php] -- include --> D[View]
 A[index.php] -- include --> B[Controller]
 B[Controller] -- include --> E(data.php)
+A[index.php] -- include --> C[Model]
 C[Model] -- include --> E(get_wf3_blog.php)
 C[Model] -- request --> K[(wf3_blog)]
 K[(wf3_blog)] -- response --> C[Model]
+A[index.php] -- include --> D[View]
 D[View] -- include --> E(index.html.php)
-E(index.html.php) -- include --> F(head.html.php)
-E(index.html.php) -- include --> G(body.html.php)
-G(body.html.php) -- include --> H(header.html.php)
-G(body.html.php) -- include --> I(section.html.php)
-G(body.html.php) -- include --> J(footer.html.php)
+```
+
+### View
+
+```mermaid
+graph LR
+A[View] -- include --> B(index.html.php)
+B(index.html.php) -- include --> C(head.html.php)
+B(index.html.php) -- include --> D(body.html.php)
+D(body.html.php) -- include --> E(header.html.php)
+D(body.html.php) -- include --> F(section.html.php)
+D(body.html.php) -- include --> G(footer.html.php)
 ```
