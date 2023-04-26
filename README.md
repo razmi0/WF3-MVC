@@ -10,18 +10,13 @@ Designer plusieurs projet en MVC
 
 # Flow
 
-### General 
+### General MVC
 
 ```mermaid
 graph LR
-A[index.php] -- include --> B[Controller]
-B[Controller] -- include --> E(data.php)
-A[index.php] -- include --> D[View]
-A[index.php] -- include --> C[Model]
-D[View] -- include --> E(index.html.php)
-C[Model] -- include --> E(get_wf3_blog.php)
-C[Model] -- request --> K[(wf3_blog)]
-K[(wf3_blog)] -- response --> C[Model]
+A(index.php) ----> D{View}--is--> E(index.html.php)
+A(index.php) ----> C{Model}-- get_wf3_blog --> K[(wf3_blog)]
+A(index.php) ----> B{Controller}-- include-->H(data.php)
 ```
 
 ### View
