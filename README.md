@@ -12,11 +12,12 @@ Designer plusieurs projet en MVC
 
 ```mermaid
 graph LR
-A[(index.php)] -- include --> C[Model]
-A[(index.php)] -- include --> D[View]
-A[(index.php)] -- include --> B[Controller]
+A[index.php] -- include --> C[Model]
+A[index.php] -- include --> D[View]
+A[index.php] -- include --> B[Controller]
 
 C[Model] -- include --> E(get_wf3_blog.php)
+C[Model] -- request --> K[(wf3_blog)]
 
 D[View] -- include --> E(index.html.php)
 E(index.html.php) -- include --> F(head.html.php)
